@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Collections;
+
 
 public class App {
     public static void main(String[] args) throws Exception 
@@ -18,11 +20,11 @@ public class App {
         while(true){
             try 
             {
-                System.out.println("Välj ett val från dessa 3 \n1. lägg till person \n2. söka efter person \n3. ta bort person via namn \n4. stäng av program"); 
+                System.out.println("Välj ett val från dessa 5 \n1. lägg till person \n2. söka efter person \n3. ta bort person via namn \n4. stäng av program \n5. Sortera lista"); 
                 menyval = tb.nextInt();
-                if(menyval > 4 || menyval < 1)
+                if(menyval > 5 || menyval < 1)
                 {
-                    System.out.println("större än 4 eller mindre än 1 är ej tillåtet.");
+                    System.out.println("större än 5 eller mindre än 1 är ej tillåtet.");
                     continue;
                 }
                 else
@@ -160,7 +162,15 @@ public class App {
 
             case 4:
             {
+                tb.close();
                 System.exit(0);
+                break;
+            }
+
+            case 5:
+            {
+                Collections.sort(register);
+                System.out.println(register);
             }
 
         }

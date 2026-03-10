@@ -1,4 +1,4 @@
-public class Person 
+public class Person implements Comparable<Person>
 {
     private String namn;
     private int födelseÅr;
@@ -22,6 +22,17 @@ public class Person
     @Override
     public String toString()
     {
-        return "1. namn: " + this.namn + "\n2. födelseÅr: " + this.födelseÅr;
+        return "1. namn: " + this.namn + " födelseÅr: " + this.födelseÅr + ".\n";
+    }
+
+    @Override
+    public int compareTo(Person annan)
+    {
+        if (annan == null)
+        {
+            return 1;
+        }
+
+        return this.namn.compareTo(annan.getNamn());
     }
 }
